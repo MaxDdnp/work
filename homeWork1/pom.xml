@@ -31,8 +31,6 @@
     </dependencies>
 
 
-
-
     <build>
         <plugins>
             <plugin>
@@ -45,7 +43,7 @@
                         <configuration>
                             <classifier>only-library</classifier>
                             <excludes>
-                                <exclude>**/main*</exclude>
+                                <exclude>src/main/java/com/work/skillsup/*.java</exclude>
                             </excludes>
                         </configuration>
                     </execution>
@@ -57,6 +55,7 @@
                 <version>2.5</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <warSourceExcludes>src/main/java/com/work/apiSide/*.java</warSourceExcludes>
                 </configuration>
             </plugin>
         </plugins>
