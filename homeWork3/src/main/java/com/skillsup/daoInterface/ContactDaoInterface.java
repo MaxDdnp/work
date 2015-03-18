@@ -1,5 +1,7 @@
 package com.skillsup.daoInterface;
 
+import com.skillsup.impl.Contact;
+
 /**
  * Created by Валерия on 15.03.2015.
  */

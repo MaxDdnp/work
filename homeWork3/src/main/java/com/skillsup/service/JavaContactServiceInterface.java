@@ -1,6 +1,10 @@
 package com.skillsup.service;
 
 
+import com.skillsup.impl.Contact;
+import com.skillsup.impl.Message;
+
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
@@ -9,7 +13,7 @@ import java.util.Set;
  */
 public interface JavaContactServiceInterface {
 
-    public void createContact(String fstName, String lstName, LocalDate);
+    public void createContact(String fstName, String lstName, LocalDate date);
     public void addHobby(String type, String name);
     public void addPlace(String title, String description, double longtitude, double latitude);
     public void addFriendship(Contact a, Contact b);

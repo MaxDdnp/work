@@ -4,9 +4,12 @@ import com.skillsup.daoInterface.ContactDaoInterface;
 import com.skillsup.daoInterface.HobbyDaoInterface;
 import com.skillsup.daoInterface.MessageDaoInterface;
 import com.skillsup.daoInterface.PlaceDaoInterface;
-import com.skillsup.daoInterface.implem.Contact;
+import com.skillsup.daoInterface.implem.ContactDAO;
+import com.skillsup.impl.Contact;
+import com.skillsup.impl.Message;
 import com.skillsup.service.JavaContactServiceInterface;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
@@ -19,8 +22,9 @@ public class JavaContactService implements JavaContactServiceInterface {
     private PlaceDaoInterface placeDao;
     private MessageDaoInterface messageDao;
 
+
     @Override
-    public void createContact(String fstName, String lstName) {
+    public void createContact(String fstName, String lstName, LocalDate date) {
 
     }
 
@@ -40,7 +44,7 @@ public class JavaContactService implements JavaContactServiceInterface {
     }
 
     @Override
-    public Set<Contact> getFriendList(Contact x) {
+    public Set<Contact> getFriendList(Contact b) {
         return null;
     }
 

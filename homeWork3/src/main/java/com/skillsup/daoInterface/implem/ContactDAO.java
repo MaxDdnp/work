@@ -1,11 +1,12 @@
 package com.skillsup.daoInterface.implem;
 
 import com.skillsup.daoInterface.ContactDaoInterface;
+import com.skillsup.impl.Contact;
 
 /**
  * Created by Валерия on 15.03.2015.
  */
-public class Contact implements ContactDaoInterface {
+public class ContactDAO implements ContactDaoInterface {
 
     @Override
     public void addContact(Contact a) {
@@ -14,6 +15,7 @@ public class Contact implements ContactDaoInterface {
 
     @Override
     public void deleteContact(Contact a) {
+
 
     }
 

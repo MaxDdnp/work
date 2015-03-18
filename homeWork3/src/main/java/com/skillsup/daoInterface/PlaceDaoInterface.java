@@ -1,5 +1,8 @@
 package com.skillsup.daoInterface;
 
+import com.skillsup.impl.Contact;
+import com.skillsup.impl.Place;
+
 import java.util.Set;
 
 /**
