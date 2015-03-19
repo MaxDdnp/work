@@ -10,6 +10,6 @@ public class App {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("appContext.xml");
-        JavaContactService service = context.getBean(JavaContactService.class);
+        JavaContactService service = (JavaContactService) context.getBean("contactService");
     }
 }

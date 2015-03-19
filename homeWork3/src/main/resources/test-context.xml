@@ -1,0 +1,12 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemalocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+">
+
+    <import resource="/services-context.xml"/>
+
+    <bean class="org.easymock.EasyMock" factory-method="createMock" id="contactDAO">
+        <constructor-arg value="com.skillsup.daoInterface.implem.ContactDAO"/>
+    </bean>
+</beans>
