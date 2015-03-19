@@ -2,10 +2,12 @@ package com.skillsup.daoInterface.implem;
 
 import com.skillsup.daoInterface.ContactDaoInterface;
 import com.skillsup.impl.Contact;
+import org.springframework.stereotype.Repository;
 
 /**
  * Created by Валерия on 15.03.2015.
  */
+@Repository(value = "contactDAO")
 public class ContactDAO implements ContactDaoInterface {
 
     @Override
