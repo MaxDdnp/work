@@ -16,12 +16,10 @@ public class Contact {
 
     public Contact() {
     }
-    public Contact(String firstName, String lastName, LocalDate birthDate, Set<Hobby> hobbies, Set<Place> places ) {
+    public Contact(String firstName, String lastName, LocalDate birthDate) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = birthDate;
-        this.hobbies = hobbies;
-        this.places = places;
     }
 
     public String getFirstName() {
