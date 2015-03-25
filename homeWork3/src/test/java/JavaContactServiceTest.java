@@ -1,4 +1,5 @@
 import com.skillsup.daoInterface.implem.ContactDAO;
+import com.skillsup.impl.Contact;
 import com.skillsup.service.implem.JavaContactService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,6 +8,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
+import java.time.LocalDate;
+
+import static org.easymock.EasyMock.expectLastCall;
+import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.reset;
 
 
 /**
@@ -24,6 +30,9 @@ public class JavaContactServiceTest {
 
     @Test
     public void testContact() {
+
+
+
 
     }
 }
