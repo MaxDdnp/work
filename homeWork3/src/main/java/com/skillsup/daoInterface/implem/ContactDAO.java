@@ -35,6 +35,6 @@ public class ContactDAO implements ContactDaoInterface {
 
     @Override
     public Set<Contact> getFriendList(Contact b) {
-        return null;
+            return null;
     }
 }
