@@ -2,15 +2,31 @@ package com.skillsup.impl;
 
 import java.time.LocalDate;
 import java.util.Set;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+import org.hibernate.MappingException;
 
+
+import javax.persistence.*;
+import java.io.Serializable;
 /**
  * Created by Валерия on 17.03.2015.
  */
+@Entity
+@Table(name = "CONTACT")
 public class Contact {
+    @Id
+    @Column
+    private long id;
+    @Column(name = "FIRST_NAME")
     private String firstName;
+    @Column(name = "LAST_NAME")
     private String lastName;
+    @Column(name = "BIRTH_DATE")
     private LocalDate birthDate;
+    @OneToMany(targetEntity = Hobby.class)
     private Set<Hobby> hobbies;
+    @OneToMany(targetEntity = Place.class)
     private Set<Place> places;
 
 
@@ -63,6 +79,32 @@ public class Contact {
     }
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        Contact contact = (Contact) o;
 
+        if (id != contact.id) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return (int) (id ^ (id >>> 32));
+    }
+
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", birthDate=" + birthDate +
+                ", hobbies=" + hobbies +
+                ", places=" + places +
+                '}';
+    }
 }
