@@ -19,8 +19,7 @@ public class Weather implements Runnable{
     private List listDegres;
     private String url;
     private int degres;
-    public Weather() {
-    }
+
 
 
     public Weather(List listDegres, String url) {
@@ -31,27 +30,30 @@ public class Weather implements Runnable{
 
     @Override
     public void run() {
+        try {
+            listDegres.add(this.getDegres("dnipropetrovsk", "ukraine"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
 
-    public int getDegres(String city, String country) throws IOException{
+    public Integer getDegres(String city, String country) throws IOException{
         String url = null;
-        int resultDegres;
-        url = "http://api.openweathermap.org/data/2.5/weather?q=city,country" + city + "," + country + "&units=metric";
+        Integer resultTemp = null;
+        url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "," + country + "&units=metric";
         URL reqURL = new URL(url);
 
         InputStream in = reqURL.openStream();
         BufferedReader bReader = new BufferedReader(new InputStreamReader(in));
-        JsonParser jp = new JsonParser(); //from gson
-        JsonElement root = jp.parse(bReader); //convert the input stream to a json element
+        JsonParser jp = new JsonParser();
+        JsonElement root = jp.parse(bReader);
         JsonObject rootobj = root.getAsJsonObject();
         JsonObject main = rootobj.getAsJsonObject("main");
-        JsonObject temp = main.getAsJsonObject("temp");
-        String resultDegr = temp.toString();
-        System.out.println(resultDegr);
+        resultTemp = main.get("temp").getAsInt();
 
-        return degres;
+        return resultTemp;
     }
 
 
