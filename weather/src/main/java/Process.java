@@ -19,7 +19,8 @@ public class Process {
 
         Document doc = generateXML("918981");
         disp.getConditions(doc);
-
+        Weather weather = new Weather();
+        weather.getDegres("dnipropetrovsk", "ukraine");
     }
 
     public static Document generateXML(String code) throws IOException {
