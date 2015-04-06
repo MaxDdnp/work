@@ -17,14 +17,10 @@ import java.util.List;
  */
 public class Weather implements Runnable{
     private List listDegres;
-    private String url;
-    private int degres;
 
 
-
-    public Weather(List listDegres, String url) {
+    public Weather(List listDegres) {
         this.listDegres = listDegres;
-        this.url = url;
     }
 
 
