@@ -16,7 +16,7 @@ import java.util.List;
  * Created by mde on 4/2/2015.
  */
 public class Weather implements Runnable{
-    private List listDegres;
+    private volatile List listDegres;
 
 
     public Weather(List listDegres) {
@@ -35,7 +35,7 @@ public class Weather implements Runnable{
     }
 
 
-    public Integer getDegres(String city, String country) throws IOException{
+    public synchronized Integer getDegres(String city, String country) throws IOException{
         String url = null;
         Integer resultTemp = null;
         url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "," + country + "&units=metric";
@@ -48,7 +48,6 @@ public class Weather implements Runnable{
         JsonObject rootobj = root.getAsJsonObject();
         JsonObject main = rootobj.getAsJsonObject("main");
         resultTemp = main.get("temp").getAsInt();
-
         return resultTemp;
     }
 

@@ -12,7 +12,7 @@ import java.util.List;
  * Created by mde on 4/6/2015.
  */
 public class Weather2 implements Runnable{
-    private List listDegres;
+    private volatile List listDegres;
 
     public Weather2(List listDegres) {
         this.listDegres = listDegres;
@@ -32,7 +32,7 @@ public class Weather2 implements Runnable{
     }
 
 
-    public Integer getDegres(String city) throws IOException, UnirestException {
+    public synchronized Integer getDegres(String city) throws IOException, UnirestException {
         String url = null;
         Integer resultTemp = null;
         url = "https://george-vustrey-weather.p.mashape.com/api.php?location=" + city;
@@ -43,8 +43,10 @@ public class Weather2 implements Runnable{
         Gson gson = new Gson();
         String responseJSONString = response.getBody().toString();
         JsonElement jelem = new JsonParser().parse(responseJSONString);
-        JsonArray rootobj = jelem.getAsJsonArray();
-        System.out.println(rootobj.toString());
+        JsonArray rootarray = jelem.getAsJsonArray();
+        JsonObject rootobj = rootarray.get(0).getAsJsonObject();
+        resultTemp = rootobj.get("high_celsius").getAsInt();
+        System.out.println(rootobj.get("high_celsius").getAsInt());
         return resultTemp;
     }
 }

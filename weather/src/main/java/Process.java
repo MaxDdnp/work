@@ -18,10 +18,7 @@ import org.w3c.dom.Document;
 public class Process {
 
     public static void main(String[] args) throws IOException, UnirestException {
-        List<Integer> list = new ArrayList<Integer>();
-        Weather weather = new Weather(list);
-        Weather2 weather2 = new Weather2(list);
-        weather.getDegres("dnipropetrovsk", "ukraine");
-        weather2.getDegres("Dnipropetrovsk");
+        Thread temp = new Thread(new Service());
+        temp.start();
     }
 }
