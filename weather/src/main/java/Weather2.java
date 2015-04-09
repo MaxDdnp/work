@@ -46,7 +46,7 @@ public class Weather2 implements Runnable{
         JsonArray rootarray = jelem.getAsJsonArray();
         JsonObject rootobj = rootarray.get(0).getAsJsonObject();
         resultTemp = rootobj.get("high_celsius").getAsInt();
-        System.out.println(rootobj.get("high_celsius").getAsInt());
+//        System.out.println(rootobj.get("high_celsius").getAsInt());
         return resultTemp;
     }
 }

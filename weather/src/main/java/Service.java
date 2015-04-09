@@ -13,5 +13,25 @@ public class Service implements Runnable{
         Thread t2 = new Thread(new Weather2(allTemp));
         t1.start();
         t2.start();
+        try {
+            t1.join(500);
+            t2.join(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(this.calculateAverage(allTemp));
+    }
+
+    private synchronized int calculateAverage(List <Integer> list) {
+        if (list == null || list.isEmpty()) {
+            return 0;
+        }
+
+        int sum = 0;
+        for (Integer mark : list) {
+            sum += mark;
+        }
+
+        return sum / list.size();
     }
 }
