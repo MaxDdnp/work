@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SpringMvcExample:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="mitta-webapp.war">
+      <element id="artifact" artifact-name="SpringMvcExample:war exploded" />
+    </root>
+  </artifact>
+</component>
