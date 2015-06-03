@@ -25,5 +25,8 @@
         <module name="StagingCheck" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="StagingCheck" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
