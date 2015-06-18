@@ -49,7 +49,7 @@ public class TestStaging {
         driver.get(urlLogin);
         driver.findElement(By.id("email")).sendKeys("superadmin@l.me");
         driver.findElement(By.id("password")).sendKeys("1234");
-        driver.findElement(By.className("btn")).click();
+        driver.findElement(By.className("hbtn")).click();
         Assert.assertFalse("cannot Login", driver.getPageSource().contains(cannotLoginMessage));
 
     }
