@@ -175,10 +175,19 @@ public class TestStaging {
         Thread.sleep(2000);
         driver.findElement(By.linkText("Approve")).click();
     }
-    
+
 
     @After
     public void tearDown() throws Exception {
-        driver.quit();
+        driver.close();
+
+        try
+        {
+            Thread.sleep(5000);
+            driver.quit();
+        }
+        catch(Exception e)
+        {
+        }
     }
 }
