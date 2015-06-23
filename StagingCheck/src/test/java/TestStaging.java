@@ -175,20 +175,7 @@ public class TestStaging {
         Thread.sleep(2000);
         driver.findElement(By.linkText("Approve")).click();
     }
-
-
-    @Test
-    public void testSample(){
-        driver.get(urlLogin);
-        driver.findElement(By.id("email")).sendKeys("superadmin@l.me");
-        driver.findElement(By.id("password")).sendKeys("1234");
-        driver.findElement(By.className("btn")).click();
-        driver.findElement(By.linkText("advertiser@l.me")).click();
-        driver.findElement(By.linkText("Login")).click();
-        driver.get("http://qa01.lmstaging.me/campaigns/77/line_items/80");
-        driver.findElement(By.linkText("Approve"));
-
-    }
+    
 
     @After
     public void tearDown() throws Exception {

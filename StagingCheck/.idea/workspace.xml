@@ -40,8 +40,8 @@
       <file leaf-file-name="TestStaging.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/TestStaging.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33675563" vertical-offset="2743" max-vertical-offset="3434">
-              <caret line="171" column="19" selection-start-line="171" selection-start-column="19" selection-end-line="171" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.5811088" vertical-offset="2726" max-vertical-offset="3213">
+              <caret line="177" column="4" selection-start-line="177" selection-start-column="4" selection-end-line="177" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -658,12 +658,12 @@
       <option name="number" value="Default" />
       <updated>1433246031316</updated>
       <workItem from="1433246042427" duration="15989000" />
-      <workItem from="1434436490862" duration="37730000" />
+      <workItem from="1434436490862" duration="38332000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53719000" />
+    <option name="totallyTimeSpent" value="54321000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -754,8 +754,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/TestStaging.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33675563" vertical-offset="2743" max-vertical-offset="3434">
-          <caret line="171" column="19" selection-start-line="171" selection-start-column="19" selection-end-line="171" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.5811088" vertical-offset="2726" max-vertical-offset="3213">
+          <caret line="177" column="4" selection-start-line="177" selection-start-column="4" selection-end-line="177" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
