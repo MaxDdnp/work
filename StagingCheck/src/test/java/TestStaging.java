@@ -74,7 +74,7 @@ public class TestStaging {
         driver.findElement(By.linkText("publisher@l.me")).click();
         driver.findElement(By.linkText("Login")).click();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        Assert.assertTrue("Element is not present on page", driver.findElement(By.xpath("")).isDisplayed());
+        Assert.assertTrue("Element is not present on page", driver.findElement(By.xpath("html/body/div[2]/div/div/div/ul/li[2]/a")).isDisplayed());
 
         driver.findElement(By.xpath("html/body/div[2]/div/div/div/ul/li[2]/a")).click();
         Thread.sleep(100);
