@@ -4,7 +4,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.junit.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 import org.yecht.Data;
 
 import javax.validation.constraints.AssertFalse;
@@ -71,9 +73,8 @@ public class TestStaging {
         driver.findElement(By.className("btn")).click();
         driver.findElement(By.linkText("publisher@l.me")).click();
         driver.findElement(By.linkText("Login")).click();
-        Thread.sleep(900);
-
-
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        Assert.assertTrue("Element is not present on page", driver.findElement(By.xpath("")).isDisplayed());
 
         driver.findElement(By.xpath("html/body/div[2]/div/div/div/ul/li[2]/a")).click();
         Thread.sleep(100);
