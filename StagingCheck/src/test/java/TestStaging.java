@@ -72,7 +72,7 @@ public class TestStaging {
         driver.findElement(By.linkText("publisher@l.me")).click();
         driver.findElement(By.linkText("Login")).click();
         Thread.sleep(500);
-        driver.findElement(By.linkText("Apps & Sites")).click();
+        driver.findElement(By.xpath("html/body/div[2]/div/div/div/ul/li[2]/a")).click();
         Thread.sleep(100);
         driver.findElement(By.linkText("Add App or Site")).click();
         driver.findElement(By.xpath("//*[@id='app_platform_id_chzn']/a/span")).click();
