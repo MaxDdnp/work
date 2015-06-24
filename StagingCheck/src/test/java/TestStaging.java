@@ -71,7 +71,10 @@ public class TestStaging {
         driver.findElement(By.className("btn")).click();
         driver.findElement(By.linkText("publisher@l.me")).click();
         driver.findElement(By.linkText("Login")).click();
-        Thread.sleep(500);
+        Thread.sleep(900);
+
+
+
         driver.findElement(By.xpath("html/body/div[2]/div/div/div/ul/li[2]/a")).click();
         Thread.sleep(100);
         driver.findElement(By.linkText("Add App or Site")).click();
