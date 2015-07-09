@@ -52,7 +52,7 @@ public class TestStaging {
     @Test
     public void testHTML() throws InterruptedException {
         driver.get(urlHtml);
-        driver.findElement(By.className("LM_html_container"));
+        driver.findElement(By.className("ri"));
     }
 
     @Test
