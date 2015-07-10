@@ -19,7 +19,7 @@ public class TestStaging {
     private WebDriver driver;
     private String urlImage = "http://qa01.lmstaging.me/test2.html?ak=b4cc298cc3";
     private String urlVideo = "http://qa01.lmstaging.me/test2.html?ak=f5b90b66ed";
-    private String urlHtml = "http://qa01.lmstaging.me/test2.html?ak=b664917b29";
+    private String urlHtml = "http://qa01.lmstaging.me/test2.html?ak=6afa9289df";
     private String urlLogin = "http://qa01.lmstaging.me/login";
     private String cannotLoginMessage = "\n" +
             "    We didn't recognize the username or password you entered. Please try again.\n" +
@@ -52,7 +52,7 @@ public class TestStaging {
     @Test
     public void testHTML() throws InterruptedException {
         driver.get(urlHtml);
-        driver.findElement(By.className("LM_html_container"));
+        driver.findElement(By.id("gwd-shine"));
     }
 
     @Test
