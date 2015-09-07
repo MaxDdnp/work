@@ -17,9 +17,9 @@ import java.util.concurrent.TimeUnit;
  */
 public class TestStaging {
     private WebDriver driver;
-    private String urlImage = "http://qa01.lmstaging.me/test2.html?ak=b4cc298cc3";
-    private String urlVideo = "http://qa01.lmstaging.me/test2.html?ak=f5b90b66ed";
-    private String urlHtml = "http://qa01.lmstaging.me/test2.html?ak=6afa9289df";
+    private String urlImage = "http://qa01.lmstaging.me/test2.html?ak=56fabfc17f";
+    private String urlVideo = "http://qa01.lmstaging.me/test2.html?ak=b510d5bcda";
+    private String urlHtml = "http://qa01.lmstaging.me/test2.html?ak=4a6f7f93d1";
     private String urlLogin = "http://qa01.lmstaging.me/login";
     private String cannotLoginMessage = "\n" +
             "    We didn't recognize the username or password you entered. Please try again.\n" +
@@ -52,7 +52,7 @@ public class TestStaging {
     @Test
     public void testHTML() throws InterruptedException {
         driver.get(urlHtml);
-        driver.findElement(By.id("gwd-shine"));
+        driver.findElement(By.id("background-image"));
     }
 
     @Test
@@ -65,21 +65,25 @@ public class TestStaging {
 
     }
 
-//    @Test
-//    public void testFullCreatingCampaign() throws InterruptedException {
-//        driver.get(urlLogin);
-//        driver.findElement(By.id("email")).sendKeys("superadmin@l.me");
-//        driver.findElement(By.id("password")).sendKeys("1234");
-//        driver.findElement(By.className("btn")).click();
-//        driver.findElement(By.linkText("publisher@l.me")).click();
-//        driver.findElement(By.linkText("Login")).click();
-//        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    @Test
+    public void testFullCreatingCampaign() throws InterruptedException {
+        driver.get(urlLogin);
+        driver.findElement(By.id("email")).sendKeys("superadmin@l.me");
+        driver.findElement(By.id("password")).sendKeys("1234");
+        driver.findElement(By.className("btn")).click();
+        driver.findElement(By.linkText("publisher@l.me")).click();
+        driver.findElement(By.linkText("Login")).click();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 //        Assert.assertTrue("Element is not present on page", driver.findElement(By.cssSelector("html/body/div[2]/div/div/div/ul/li[2]/a")).isDisplayed());
-//
-//        driver.findElement(By.xpath("html/body/div[2]/div/div/div/ul/li[2]/a")).click();
-//        Thread.sleep(100);
-//        driver.findElement(By.linkText("Add App or Site")).click();
-//        driver.findElement(By.xpath("//*[@id='app_platform_id_chzn']/a/span")).click();
+        //apps and sites
+        driver.findElement(By.xpath("html/body/div[2]/div/div/div/ul/li[2]/a")).click();
+        Thread.sleep(100);
+        driver.findElement(By.linkText("Add App or Site")).click();
+        Assert.assertTrue("There is no app creation", driver.findElement(By.xpath(".//*[@id='new_app']/fieldset[1]/legend")).isDisplayed());
+        driver.findElement(By.xpath("html/body/div[2]/div/div/div/ul/li[5]/a")).click();
+        Thread.sleep(100);
+        driver.findElement(By.xpath("html/body/div[2]/div/div/div/ul/li[5]/ul/li[3]/a")).click();
+
 //        Thread.sleep(100);
 //        driver.findElement(By.id("app_platform_id_chzn_o_1")).click();
 //        String nameOfApp = "TestAppForCheking" + LocalDate.now() + (int)(Math.random()*100);
@@ -109,19 +113,24 @@ public class TestStaging {
 //
 //        driver.findElement(By.xpath("//*[@id='main']/div[3]/a")).click();
 //        driver.findElement(By.xpath("//*[@id='main']/div[3]/ul/li[2]/a")).click();
-//
-//        //Login to adv account*/
+
+        //Login to adv account*/
+        driver.findElement(By.linkText("advertiser@l.me")).click();
+        driver.findElement(By.linkText("Login")).click();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
 //        driver.findElement(By.linkText("Users")).click();
 //        driver.findElement(By.linkText("advertiser@l.me")).click();
 //        driver.findElement(By.linkText("Login")).click();
-//
-//        driver.findElement(By.linkText("Campaigns")).click();
-//        Thread.sleep(100);
-//        //creating camp
-//        driver.findElement(By.linkText("Create Campaign")).click();
-//        String nameOfCamp = "TestCampForCheking" + LocalDate.now() + (int)(Math.random()*100);
-//        driver.findElement(By.id("campaign_name")).sendKeys(nameOfCamp);
-//        //choose adv
+
+        driver.findElement(By.linkText("Campaigns")).click();
+        Thread.sleep(100);
+        //creating camp
+        driver.findElement(By.linkText("Create Campaign")).click();
+
+        Assert.assertTrue("There is no camp creation", driver.findElement(By.xpath(".//*[@id='new_campaign']/fieldset/legend")).isDisplayed());
+
+        //choose adv
 //        driver.findElement(By.xpath("//*[@id='campaign_advertiser_id_chzn']/a/span")).click();
 //        driver.findElement(By.id("campaign_advertiser_id_chzn_o_1")).click();
 //        //choose brand
@@ -179,7 +188,7 @@ public class TestStaging {
 //        driver.findElement(By.xpath("//*[@id='new_image_creative']/div[2]/input")).click();
 //        Thread.sleep(2000);
 //        driver.findElement(By.xpath(".//*[@id='main']/legend/div/a[5]")).click();
-//    }
+    }
 
 
     @After
